@@ -1,5 +1,7 @@
 package grey.fable.base.text;
 
+import java.util.StringJoiner;
+
 /**
  * {@link String} 工具类.
  *
@@ -67,5 +69,34 @@ public final class StringUtil {
      */
     public static boolean isNotBlank(final CharSequence cs) {
         return !isBlank(cs);
+    }
+
+    /**
+     * 使用默认分隔符连接多个字符串.
+     *
+     * @param strings Strings
+     * @return {@link String}
+     * @author GreyFable
+     * @since 2024/8/21 15:45
+     */
+    public static String join(final String... strings) {
+        return join(",", strings);
+    }
+
+    /**
+     * 使用指定分隔符连接多个字符串.
+     *
+     * @param delimiter 分隔符
+     * @param strings   Strings
+     * @return {@link String}
+     * @author GreyFable
+     * @since 2024/8/21 15:45
+     */
+    public static String join(final String delimiter, final String... strings) {
+        final StringJoiner joiner = new StringJoiner(delimiter);
+        for (String string : strings) {
+            joiner.add(string);
+        }
+        return joiner.toString();
     }
 }

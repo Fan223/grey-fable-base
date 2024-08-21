@@ -54,12 +54,12 @@ public final class CollectionUtil {
      * 将 {@link Collection} 通过指定分隔符组合成 {@link String}.
      *
      * @param collection {@link Collection}
-     * @param separator  分隔符
+     * @param delimiter  分隔符
      * @return {@link String}
      * @author GreyFable
      * @since 2024/8/15 10:45
      */
-    public static String join(final Collection<?> collection, final String separator) {
-        return collection.stream().map(Object::toString).collect(Collectors.joining(separator));
+    public static String join(final Collection<?> collection, final String delimiter) {
+        return collection.stream().map(Object::toString).collect(Collectors.joining(delimiter));
     }
 }
