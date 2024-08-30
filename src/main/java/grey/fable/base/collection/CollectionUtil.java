@@ -39,7 +39,7 @@ public final class CollectionUtil {
     }
 
     /**
-     * 将 {@link Collection} 通过默认分隔符组合成 {@link String}.
+     * 将 {@link Collection} 通过默认分隔符 {@code ,} 连接成 {@link String}.
      *
      * @param collection {@link Collection}
      * @return {@link String}
@@ -51,7 +51,7 @@ public final class CollectionUtil {
     }
 
     /**
-     * 将 {@link Collection} 通过指定分隔符组合成 {@link String}.
+     * 将 {@link Collection} 通过指定分隔符连接成 {@link String}.
      *
      * @param collection {@link Collection}
      * @param delimiter  分隔符
@@ -59,7 +59,27 @@ public final class CollectionUtil {
      * @author GreyFable
      * @since 2024/8/15 10:45
      */
-    public static String join(final Collection<?> collection, final String delimiter) {
-        return collection.stream().map(Object::toString).collect(Collectors.joining(delimiter));
+    public static String join(final Collection<?> collection,
+                              final CharSequence delimiter) {
+        return collection.parallelStream().map(Object::toString).collect(Collectors.joining(delimiter));
+    }
+
+    /**
+     * 将 {@link Collection} 通过指定分隔符和前后缀连接成 {@link String}.
+     *
+     * @param collection {@link Collection}
+     * @param delimiter  分隔符
+     * @param prefix     前缀
+     * @param suffix     后缀
+     * @return {@link String}
+     * @author GreyFable
+     * @since 2024/8/30 13:48
+     */
+    public static String join(final Collection<?> collection,
+                              final CharSequence delimiter,
+                              final CharSequence prefix,
+                              final CharSequence suffix) {
+        return collection.parallelStream().map(Object::toString)
+                .collect(Collectors.joining(delimiter, null == prefix ? "" : prefix, null == suffix ? "" : suffix));
     }
 }

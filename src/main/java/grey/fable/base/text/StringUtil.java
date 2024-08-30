@@ -72,30 +72,53 @@ public final class StringUtil {
     }
 
     /**
-     * 使用默认分隔符连接多个字符串.
+     * 使用默认分隔符 {@code ,} 连接多个字符串.
      *
-     * @param strings Strings
+     * @param sequences {@link CharSequence}
      * @return {@link String}
      * @author GreyFable
      * @since 2024/8/21 15:45
      */
-    public static String join(final String... strings) {
-        return join(",", strings);
+    public static String join(final CharSequence... sequences) {
+        return join(",", sequences);
     }
 
     /**
      * 使用指定分隔符连接多个字符串.
      *
      * @param delimiter 分隔符
-     * @param strings   Strings
+     * @param sequences {@link CharSequence}
      * @return {@link String}
      * @author GreyFable
      * @since 2024/8/21 15:45
      */
-    public static String join(final String delimiter, final String... strings) {
+    public static String join(final CharSequence delimiter,
+                              final CharSequence... sequences) {
         final StringJoiner joiner = new StringJoiner(delimiter);
-        for (String string : strings) {
-            joiner.add(string);
+        for (CharSequence sequence : sequences) {
+            joiner.add(sequence);
+        }
+        return joiner.toString();
+    }
+
+    /**
+     * 使用指定分隔符和前后缀连接多个字符串.
+     *
+     * @param delimiter 分隔符
+     * @param prefix    前缀
+     * @param suffix    后缀
+     * @param sequences {@link CharSequence}
+     * @return {@link String}
+     * @author GreyFable
+     * @since 2024/8/30 16:06
+     */
+    public static String join(final CharSequence delimiter,
+                              final CharSequence prefix,
+                              final CharSequence suffix,
+                              final CharSequence... sequences) {
+        final StringJoiner joiner = new StringJoiner(delimiter, prefix, suffix);
+        for (CharSequence sequence : sequences) {
+            joiner.add(sequence);
         }
         return joiner.toString();
     }

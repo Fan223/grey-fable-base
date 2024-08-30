@@ -408,7 +408,10 @@
         <!-- 检查括号的填充策略；即左括号后和右括号前是否需要空格, 或者这些空格是否被禁止 -->
         <module name="ParenPad"/>
         <!-- 检查使用分隔符的换行情况 -->
-        <module name="SeparatorWrap"/>
+        <module name="SeparatorWrap">
+            <property name="tokens" value="DOT"/>
+            <property name="option" value="nl"/>
+        </module>
         <!-- 检查非空白字符之间的间隔不超过一个空白字符 -->
         <module name="SingleSpaceSeparator"/>
         <!-- 检查类型转换的括号填充政策. 即, 左括号后和右括号前是否需要空格, 或者这些空格是否被禁止 -->

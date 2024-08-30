@@ -1,4 +1,4 @@
-package grey.fable.base.utils;
+package grey.fable.base.text;
 
 /**
  * 正则表达式池.

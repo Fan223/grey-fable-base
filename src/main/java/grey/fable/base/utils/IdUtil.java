@@ -4,6 +4,8 @@ package grey.fable.base.utils;
 import grey.fable.base.Pid;
 import grey.fable.base.Snowflake;
 import grey.fable.base.net.NetUtil;
+import grey.fable.base.text.ArabicNumerals;
+import grey.fable.base.text.HexPool;
 
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -47,7 +49,8 @@ public final class IdUtil {
 
         long id = 1L;
         if (dataCenterId > 0 && ArrayUtil.isNotEmpty(mac)) {
-            id = ((0xFF & (long) mac[mac.length - 2]) | (0x0000FF00 & (((long) mac[mac.length - 1]) << 8))) >> 6;
+            id = ((HexPool.FF & (long) mac[mac.length - 2])
+                    | (HexPool.FF00 & (((long) mac[mac.length - 1]) << ArabicNumerals.EIGHT))) >> ArabicNumerals.SIX;
             id = id % (maxDataCenterId + 1);
         }
         return id;
@@ -62,10 +65,11 @@ public final class IdUtil {
      * @author GreyFable
      * @since 2024/8/13 11:29
      */
-    public static long getWorkerId(final long dataCenterId, final long maxWorkerId) {
+    public static long getWorkerId(final long dataCenterId,
+                                   final long maxWorkerId) {
         final String workerId = String.valueOf(dataCenterId) + getProcessId();
         // MAC + PID 的 hashcode 获取 16 个低位
-        return (workerId.hashCode() & 0xFFFF) % (maxWorkerId + 1);
+        return (workerId.hashCode() & HexPool.FFFF) % (maxWorkerId + 1);
     }
 
     /**

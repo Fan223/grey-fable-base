@@ -35,7 +35,9 @@ public final class Assert {
      * @author GreyFable
      * @since 2024/8/13 11:21
      */
-    public static void isTrue(final boolean expression, final String errorMsgTemplate, final Object... params)
+    public static void isTrue(final boolean expression,
+                              final String errorMsgTemplate,
+                              final Object... params)
             throws IllegalArgumentException {
         isTrue(expression, () -> new IllegalArgumentException(String.format(errorMsgTemplate, params)));
     }
@@ -50,8 +52,8 @@ public final class Assert {
      * @author GreyFable
      * @since 2024/8/13 11:21
      */
-    public static <X extends Throwable> void isTrue(final boolean expression, final Supplier<? extends X> errorSupplier)
-            throws X {
+    public static <X extends Throwable> void isTrue(final boolean expression,
+                                                    final Supplier<? extends X> errorSupplier) throws X {
         if (!expression) {
             throw errorSupplier.get();
         }
@@ -67,7 +69,9 @@ public final class Assert {
      * @author GreyFable
      * @since 2024/8/13 11:22
      */
-    public static long checkBetween(final long value, final long min, final long max) {
+    public static long checkBetween(final long value,
+                                    final long min,
+                                    final long max) {
         return checkBetween(value, min, max, "The value must be between %d and %d.");
     }
 
@@ -82,7 +86,10 @@ public final class Assert {
      * @author GreyFable
      * @since 2024/8/13 11:23
      */
-    public static long checkBetween(final long value, final long min, final long max, final String errorMsgTemplate) {
+    public static long checkBetween(final long value,
+                                    final long min,
+                                    final long max,
+                                    final String errorMsgTemplate) {
         return checkBetween(value, min, max, () -> new IllegalArgumentException(String.format(errorMsgTemplate, min, max)));
     }
 
@@ -98,7 +105,9 @@ public final class Assert {
      * @author GreyFable
      * @since 2024/8/13 11:23
      */
-    public static <X extends Throwable> long checkBetween(final long value, final long min, final long max,
+    public static <X extends Throwable> long checkBetween(final long value,
+                                                          final long min,
+                                                          final long max,
                                                           final Supplier<? extends X> errorSupplier) throws X {
         if (value < min || value > max) {
             throw errorSupplier.get();

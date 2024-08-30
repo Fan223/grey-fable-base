@@ -1,4 +1,4 @@
-package grey.fable.base;
+package grey.fable.base.text;
 
 /**
  * 阿拉伯数字类.
@@ -92,7 +92,6 @@ public final class ArabicNumerals {
      * 数字 16.
      */
     public static final int SIXTEEN = 16;
-
 
     private ArabicNumerals() {
     }

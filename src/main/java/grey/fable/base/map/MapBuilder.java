@@ -50,7 +50,8 @@ public class MapBuilder<K, V> implements Builder<Map<K, V>> {
      * @author GreyFable
      * @since 2024/8/12 16:15
      */
-    public MapBuilder<K, V> put(final K key, final V value) {
+    public MapBuilder<K, V> put(final K key,
+                                final V value) {
         this.map.put(key, value);
         return this;
     }
@@ -65,7 +66,9 @@ public class MapBuilder<K, V> implements Builder<Map<K, V>> {
      * @author GreyFable
      * @since 2024/8/12 16:16
      */
-    public MapBuilder<K, V> put(final boolean condition, final K key, final V value) {
+    public MapBuilder<K, V> put(final boolean condition,
+                                final K key,
+                                final V value) {
         return condition ? put(key, value) : this;
     }
 

@@ -64,7 +64,8 @@ public final class MapUtil {
      * @author GreyFable
      * @since 2024/8/12 16:23
      */
-    public static <K, V> Map<K, V> of(final K key, final V value) {
+    public static <K, V> Map<K, V> of(final K key,
+                                      final V value) {
         return of(false, key, value);
     }
 
@@ -80,7 +81,9 @@ public final class MapUtil {
      * @author GreyFable
      * @since 2024/8/12 16:27
      */
-    public static <K, V> Map<K, V> of(final boolean isLinked, final K key, final V value) {
+    public static <K, V> Map<K, V> of(final boolean isLinked,
+                                      final K key,
+                                      final V value) {
         final Map<K, V> map = hashMap(isLinked);
         map.put(key, value);
         return map;
@@ -110,7 +113,8 @@ public final class MapUtil {
      * @author GreyFable
      * @since 2024/8/12 16:29
      */
-    public static <K, V> MapBuilder<K, V> builder(final K key, final V value) {
+    public static <K, V> MapBuilder<K, V> builder(final K key,
+                                                  final V value) {
         return new MapBuilder<>(of(key, value));
     }
 }

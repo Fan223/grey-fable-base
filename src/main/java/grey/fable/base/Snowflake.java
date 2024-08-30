@@ -118,7 +118,8 @@ public class Snowflake {
      * @author GreyFable
      * @since 2024/8/13 11:12
      */
-    public Snowflake(final long dataCenterId, final long workerId) {
+    public Snowflake(final long dataCenterId,
+                     final long workerId) {
         this.workerId = Assert.checkBetween(workerId, 0, MAX_WORKER_ID);
         this.dataCenterId = Assert.checkBetween(dataCenterId, 0, MAX_DATA_CENTER_ID);
     }

@@ -1,6 +1,4 @@
-package grey.fable.base;
-
-import grey.fable.base.net.HttpStatus;
+package grey.fable.base.net;
 
 /**
  * 响应类.
@@ -65,7 +63,8 @@ public final class Response<T> {
      * @author GreyFable
      * @since 2024/8/12 16:33
      */
-    public static <T> Response<T> success(final String message, final T data) {
+    public static <T> Response<T> success(final String message,
+                                          final T data) {
         return Response.builder(data).code(HttpStatus.HTTP_OK).message(message).build();
     }
 
@@ -80,7 +79,9 @@ public final class Response<T> {
      * @author GreyFable
      * @since 2024/8/12 16:33
      */
-    public static <T> Response<T> success(final int code, final String message, final T data) {
+    public static <T> Response<T> success(final int code,
+                                          final String message,
+                                          final T data) {
         return Response.builder(data).code(code).message(message).build();
     }
 
@@ -107,7 +108,8 @@ public final class Response<T> {
      * @author GreyFable
      * @since 2024/8/12 16:35
      */
-    public static <T> Response<T> fail(final String message, final T data) {
+    public static <T> Response<T> fail(final String message,
+                                       final T data) {
         return Response.builder(data).code(HttpStatus.HTTP_INTERNAL_SERVER_ERROR).message(message).build();
     }
 
@@ -122,7 +124,9 @@ public final class Response<T> {
      * @author GreyFable
      * @since 2024/8/12 16:36
      */
-    public static <T> Response<T> fail(final int code, final String message, final T data) {
+    public static <T> Response<T> fail(final int code,
+                                       final String message,
+                                       final T data) {
         return Response.builder(data).code(code).message(message).build();
     }
 
