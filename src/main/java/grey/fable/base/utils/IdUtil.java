@@ -1,7 +1,6 @@
 package grey.fable.base.utils;
 
 
-import grey.fable.base.Pid;
 import grey.fable.base.Snowflake;
 import grey.fable.base.net.NetUtil;
 import grey.fable.base.text.ArabicNumerals;
@@ -67,20 +66,9 @@ public final class IdUtil {
      */
     public static long getWorkerId(final long dataCenterId,
                                    final long maxWorkerId) {
-        final String workerId = String.valueOf(dataCenterId) + getProcessId();
+        final String workerId = String.valueOf(dataCenterId) + RuntimeUtil.getProcessId();
         // MAC + PID 的 hashcode 获取 16 个低位
         return (workerId.hashCode() & HexPool.FFFF) % (maxWorkerId + 1);
-    }
-
-    /**
-     * 获取进程 ID.
-     *
-     * @return {@code int}
-     * @author GreyFable
-     * @since 2024/8/13 11:29
-     */
-    public static int getProcessId() {
-        return Pid.PROCESS_ID;
     }
 
     /**
