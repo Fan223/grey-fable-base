@@ -3,8 +3,8 @@ package grey.fable.base.utils;
 
 import grey.fable.base.Snowflake;
 import grey.fable.base.net.NetUtil;
-import grey.fable.base.text.ArabicNumerals;
-import grey.fable.base.text.HexPool;
+import grey.fable.base.pool.ArabicNumerals;
+import grey.fable.base.pool.HexPool;
 
 import java.net.SocketException;
 import java.net.UnknownHostException;

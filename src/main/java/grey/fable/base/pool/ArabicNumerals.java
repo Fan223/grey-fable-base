@@ -1,4 +1,4 @@
-package grey.fable.base.text;
+package grey.fable.base.pool;
 
 /**
  * 阿拉伯数字类.

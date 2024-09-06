@@ -1,6 +1,6 @@
 package grey.fable.base.net;
 
-import grey.fable.base.text.HexPool;
+import grey.fable.base.pool.HexPool;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
