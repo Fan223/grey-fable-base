@@ -10,9 +10,9 @@ import java.util.List;
  * @author GreyFable
  * @since 2024/8/12 16:07
  */
-public final class ListUtil {
+public final class ListUtils {
 
-    private ListUtil() {
+    private ListUtils() {
     }
 
     /**

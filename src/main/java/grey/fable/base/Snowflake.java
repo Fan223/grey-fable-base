@@ -1,6 +1,6 @@
 package grey.fable.base;
 
-import grey.fable.base.utils.IdUtil;
+import grey.fable.base.util.IdUtils;
 
 /**
  * 雪花 ID 类.
@@ -96,7 +96,7 @@ public class Snowflake {
      * @since 2024/8/13 11:11
      */
     public Snowflake() {
-        this(IdUtil.getWorkerId(IdUtil.getDataCenterId(MAX_DATA_CENTER_ID), MAX_WORKER_ID));
+        this(IdUtils.getWorkerId(IdUtils.getDataCenterId(MAX_DATA_CENTER_ID), MAX_WORKER_ID));
     }
 
     /**
@@ -107,7 +107,7 @@ public class Snowflake {
      * @since 2024/8/13 11:11
      */
     public Snowflake(final long workerId) {
-        this(IdUtil.getDataCenterId(MAX_DATA_CENTER_ID), workerId);
+        this(IdUtils.getDataCenterId(MAX_DATA_CENTER_ID), workerId);
     }
 
     /**

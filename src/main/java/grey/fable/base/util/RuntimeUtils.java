@@ -1,6 +1,6 @@
-package grey.fable.base.utils;
+package grey.fable.base.util;
 
-import grey.fable.base.Pid;
+import grey.fable.base.PID;
 
 /**
  * 运行时工具类.
@@ -8,9 +8,9 @@ import grey.fable.base.Pid;
  * @author GreyFable
  * @since 2024/9/2 14:23
  */
-public final class RuntimeUtil {
+public final class RuntimeUtils {
 
-    private RuntimeUtil() {
+    private RuntimeUtils() {
     }
 
     /**
@@ -32,6 +32,6 @@ public final class RuntimeUtil {
      * @since 2024/8/13 11:29
      */
     public static int getProcessId() {
-        return Pid.PROCESS_ID;
+        return PID.PROCESS_ID;
     }
 }

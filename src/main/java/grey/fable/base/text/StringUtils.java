@@ -11,9 +11,9 @@ import java.util.StringJoiner;
  * @author GreyFable
  * @since 2024/8/13 10:33
  */
-public final class StringUtil {
+public final class StringUtils {
 
-    private StringUtil() {
+    private StringUtils() {
     }
 
     /**
@@ -55,7 +55,7 @@ public final class StringUtil {
         }
 
         for (int i = 0; i < length; i++) {
-            if (CharUtil.isNotBlank(cs.charAt(i))) {
+            if (CharUtils.isNotBlank(cs.charAt(i))) {
                 return false;
             }
         }

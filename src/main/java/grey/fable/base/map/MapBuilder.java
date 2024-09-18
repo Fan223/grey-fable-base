@@ -27,7 +27,7 @@ public class MapBuilder<K, V> implements Builder<Map<K, V>> {
      * @since 2024/8/12 16:13
      */
     public MapBuilder(final boolean isLinked) {
-        this(MapUtil.hashMap(isLinked));
+        this(MapUtils.hashMap(isLinked));
     }
 
     /**

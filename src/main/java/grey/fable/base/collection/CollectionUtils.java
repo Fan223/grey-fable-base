@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
  * @author GreyFable
  * @since 2024/8/12 16:04
  */
-public final class CollectionUtil {
+public final class CollectionUtils {
 
-    private CollectionUtil() {
+    private CollectionUtils() {
     }
 
     /**

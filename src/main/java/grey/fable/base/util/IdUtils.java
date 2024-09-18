@@ -1,8 +1,8 @@
-package grey.fable.base.utils;
+package grey.fable.base.util;
 
 
 import grey.fable.base.Snowflake;
-import grey.fable.base.net.NetUtil;
+import grey.fable.base.net.NetUtils;
 import grey.fable.base.pool.ArabicNumerals;
 import grey.fable.base.pool.HexPool;
 
@@ -15,14 +15,14 @@ import java.net.UnknownHostException;
  * @author GreyFable
  * @since 2024/8/13 11:27
  */
-public final class IdUtil {
+public final class IdUtils {
 
     /**
      * 雪花 ID 类.
      */
     private static final Snowflake SNOWFLAKE = new Snowflake();
 
-    private IdUtil() {
+    private IdUtils() {
     }
 
     /**
@@ -41,13 +41,13 @@ public final class IdUtil {
 
         byte[] mac = new byte[0];
         try {
-            mac = NetUtil.getLocalHardwareAddress();
+            mac = NetUtils.getLocalHardwareAddress();
         } catch (UnknownHostException | SocketException ignore) {
             // ignore
         }
 
         long id = 1L;
-        if (dataCenterId > 0 && ArrayUtil.isNotEmpty(mac)) {
+        if (dataCenterId > 0 && ArrayUtils.isNotEmpty(mac)) {
             id = ((HexPool.FF & (long) mac[mac.length - 2])
                     | (HexPool.FF00 & (((long) mac[mac.length - 1]) << ArabicNumerals.EIGHT))) >> ArabicNumerals.SIX;
             id = id % (maxDataCenterId + 1);
@@ -66,7 +66,7 @@ public final class IdUtil {
      */
     public static long getWorkerId(final long dataCenterId,
                                    final long maxWorkerId) {
-        final String workerId = String.valueOf(dataCenterId) + RuntimeUtil.getProcessId();
+        final String workerId = String.valueOf(dataCenterId) + RuntimeUtils.getProcessId();
         // MAC + PID 的 hashcode 获取 16 个低位
         return (workerId.hashCode() & HexPool.FFFF) % (maxWorkerId + 1);
     }

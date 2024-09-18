@@ -1,6 +1,6 @@
 package grey.fable.base;
 
-import grey.fable.base.text.StringUtil;
+import grey.fable.base.text.StringUtils;
 
 import java.lang.management.ManagementFactory;
 
@@ -10,14 +10,14 @@ import java.lang.management.ManagementFactory;
  * @author GreyFable
  * @since 2024/8/13 11:02
  */
-public final class Pid {
+public final class PID {
 
     /**
      * 进程 ID.
      */
     public static final int PROCESS_ID = getProcessId();
 
-    private Pid() {
+    private PID() {
     }
 
     /**
@@ -29,7 +29,7 @@ public final class Pid {
      */
     private static int getProcessId() {
         final String name = ManagementFactory.getRuntimeMXBean().getName();
-        if (StringUtil.isBlank(name)) {
+        if (StringUtils.isBlank(name)) {
             return 0;
         }
 

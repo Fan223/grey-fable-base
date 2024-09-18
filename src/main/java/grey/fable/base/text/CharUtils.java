@@ -6,9 +6,9 @@ package grey.fable.base.text;
  * @author GreyFable
  * @since 2024/8/12 16:49
  */
-public final class CharUtil {
+public final class CharUtils {
 
-    private CharUtil() {
+    private CharUtils() {
     }
 
     /**

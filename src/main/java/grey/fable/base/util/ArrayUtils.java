@@ -1,4 +1,4 @@
-package grey.fable.base.utils;
+package grey.fable.base.util;
 
 import java.lang.reflect.Array;
 
@@ -8,9 +8,9 @@ import java.lang.reflect.Array;
  * @author GreyFable
  * @since 2024/8/13 10:50
  */
-public final class ArrayUtil {
+public final class ArrayUtils {
 
-    private ArrayUtil() {
+    private ArrayUtils() {
     }
 
     /**

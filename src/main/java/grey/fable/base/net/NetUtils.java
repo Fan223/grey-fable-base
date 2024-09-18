@@ -13,9 +13,9 @@ import java.net.UnknownHostException;
  * @author GreyFable
  * @since 2024/8/13 10:41
  */
-public final class NetUtil {
+public final class NetUtils {
 
-    private NetUtil() {
+    private NetUtils() {
     }
 
     /**

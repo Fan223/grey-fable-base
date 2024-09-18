@@ -10,9 +10,9 @@ import java.util.Map;
  * @author GreyFable
  * @since 2024/8/12 16:21
  */
-public final class MapUtil {
+public final class MapUtils {
 
-    private MapUtil() {
+    private MapUtils() {
     }
 
     /**
