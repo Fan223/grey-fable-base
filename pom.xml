@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 声明当前 Maven 项目的父项目 -->
+    <parent>
+        <groupId>grey.fable</groupId>
+        <artifactId>grey-fable-dependencies</artifactId>
+        <version>1.4.1</version>
+        <!-- 从仓库查找父级 -->
+        <relativePath/>
+    </parent>
+
+    <artifactId>grey-fable-base</artifactId>
+    <version>1.1</version>
+    <name>grey-fable-base</name>
+    <description>grey-fable-base</description>
+
+    <!-- 项目的构建配置信息, 包括编译器版本/插件列表/源代码目录等 -->
+    <build>
+        <!-- 定义 Maven 插件 -->
+        <plugins>
+            <!-- 生成项目源代码和资源文件的‌ Jar 包 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
