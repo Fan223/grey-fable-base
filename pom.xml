@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 继承父 POM 配置 -->
+    <parent>
+        <groupId>grey.fable</groupId>
+        <artifactId>grey-fable-dependencies</artifactId>
+        <version>2.0.0</version>
+        <!-- 指定父 POM 文件位置 -->
+        <relativePath/>
+    </parent>
+
+    <artifactId>grey-fable-base</artifactId>
+    <version>2.0.0</version>
+    <name>grey-fable-base</name>
+    <description>Basic Toolkit.</description>
+    <url>https://github.com/Fan223/grey-fable-base</url>
+    <inceptionYear>2022</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>Fan</id>
+            <name>GreyFable</name>
+            <email>fanj.zh@foxmail.com</email>
+            <url>https://fan223.cn</url>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/Fan223/grey-fable-base.git</connection>
+        <developerConnection>scm:git:git@github.com:Fan223/grey-fable-base.git</developerConnection>
+        <url>https://github.com/Fan223/grey-fable-base</url>
+        <tag/>
+    </scm>
+
+    <!-- 项目构建配置 -->
+    <build>
+        <!-- 配置 Maven 插件 -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <!-- 插件执行配置 -->
+                <executions>
+                    <execution>
+                        <id>attach-source</id>
+                        <!-- 插件执行目标 -->
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
