@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 /**
- * 集合工具类.
+ * {@link Collection} 工具类.
  *
  * @author GreyFable
  * @since 2025/2/17 15:41
@@ -16,9 +16,9 @@ public class CollectionUtils {
     }
 
     /**
-     * 判断集合是否为空.
+     * 判断是否为空.
      *
-     * @param coll 集合
+     * @param coll {@link Collection}
      * @return {@code boolean}
      * @author GreyFable
      * @since 2025/2/17 15:49
@@ -28,9 +28,9 @@ public class CollectionUtils {
     }
 
     /**
-     * 判断集合是否不为空.
+     * 判断是否不为空.
      *
-     * @param coll 集合
+     * @param coll {@link Collection}
      * @return {@code boolean}
      * @author GreyFable
      * @since 2025/2/17 15:49
@@ -40,9 +40,9 @@ public class CollectionUtils {
     }
 
     /**
-     * 将集合中的元素以默认分隔符拼接成字符串.
+     * 使用分隔符 {@code ,} 拼接成字符串.
      *
-     * @param coll 集合
+     * @param coll {@link Collection}
      * @return {@link String}
      * @author GreyFable
      * @since 2025/2/17 15:50
@@ -52,30 +52,30 @@ public class CollectionUtils {
     }
 
     /**
-     * 将集合中的元素以指定分隔符拼接成字符串.
+     * 使用指定分隔符拼接成字符串.
      *
-     * @param coll      集合
-     * @param separator 分隔符
+     * @param coll      {@link Collection}
+     * @param delimiter 分隔符
      * @return {@link String}
      * @author GreyFable
      * @since 2025/2/17 15:50
      */
-    public static String join(Collection<?> coll, String separator) {
-        return coll.parallelStream().map(Object::toString).collect(Collectors.joining(separator));
+    public static String join(Collection<?> coll, CharSequence delimiter) {
+        return coll.parallelStream().map(Object::toString).collect(Collectors.joining(delimiter));
     }
 
     /**
-     * 将集合中的元素以指定分隔符拼接成字符串, 并在前后加上指定的前缀和后缀.
+     * 使用指定分隔符拼接成字符串, 并加上指定的前缀和后缀.
      *
-     * @param coll      集合
-     * @param separator 分隔符
+     * @param coll      {@link Collection}
+     * @param delimiter 分隔符
      * @param prefix    前缀
      * @param suffix    后缀
      * @return {@link String}
      * @author GreyFable
      * @since 2025/2/17 15:50
      */
-    public static String join(Collection<?> coll, String separator, String prefix, String suffix) {
-        return coll.parallelStream().map(Object::toString).collect(Collectors.joining(separator, prefix, suffix));
+    public static String join(Collection<?> coll, String delimiter, String prefix, String suffix) {
+        return coll.parallelStream().map(Object::toString).collect(Collectors.joining(delimiter, prefix, suffix));
     }
 }

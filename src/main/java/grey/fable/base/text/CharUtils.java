@@ -13,34 +13,10 @@ public class CharUtils {
     }
 
     /**
-     * 判断字符是否为字母.
-     *
-     * @param ch 字符
-     * @return {@link boolean}
-     * @author GreyFable
-     * @since 2025/2/19 9:26
-     */
-    public static boolean isLetter(char ch) {
-        return Character.isLetter(ch);
-    }
-
-    /**
-     * 判断字符是否为数字.
-     *
-     * @param ch 字符
-     * @return {@link boolean}
-     * @author GreyFable
-     * @since 2025/2/19 9:32
-     */
-    public static boolean isDigit(char ch) {
-        return Character.isDigit(ch);
-    }
-
-    /**
      * 判断字符是否为空白字符.
      *
      * @param ch 字符
-     * @return {@link boolean}
+     * @return {@code boolean}
      * @author GreyFable
      * @since 2025/2/19 9:27
      */

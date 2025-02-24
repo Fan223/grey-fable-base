@@ -1,7 +1,7 @@
 package grey.fable.base.utils;
 
 /**
- * 运行时工具类.
+ * {@link Runtime} 工具类.
  *
  * @author GreyFable
  * @since 2025/2/19 9:35

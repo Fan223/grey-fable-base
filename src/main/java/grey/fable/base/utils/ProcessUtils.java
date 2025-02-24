@@ -1,7 +1,7 @@
 package grey.fable.base.utils;
 
 /**
- * 进程工具类.
+ * {@link Process} 工具类.
  *
  * @author GreyFable
  * @since 2025/2/17 16:45

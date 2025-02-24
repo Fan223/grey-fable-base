@@ -1,6 +1,6 @@
 package grey.fable.base.net;
 
-import grey.fable.base.exception.BaseException;
+import grey.fable.base.exception.NetException;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -30,7 +30,7 @@ public class NetUtils {
         try {
             return InetAddress.getLocalHost();
         } catch (UnknownHostException e) {
-            throw new BaseException(e);
+            throw new NetException(e);
         }
     }
 
@@ -59,7 +59,7 @@ public class NetUtils {
     /**
      * 获取指定网络地址的硬件地址.
      *
-     * @param addr 网络地址
+     * @param addr {@link InetAddress}
      * @return {@code byte[]}
      * @author GreyFable
      * @since 2025/2/18 16:06
@@ -69,7 +69,7 @@ public class NetUtils {
             NetworkInterface networkInterface = NetworkInterface.getByInetAddress(addr);
             return null == networkInterface ? null : networkInterface.getHardwareAddress();
         } catch (SocketException e) {
-            throw new BaseException("Failed to get hardware address for address: " + addr.getHostAddress(), e);
+            throw new NetException("Failed to get hardware address for address: " + addr.getHostAddress(), e);
         }
     }
 }

@@ -1,7 +1,7 @@
 package grey.fable.base.text;
 
 /**
- * 字节工具类.
+ * {@link Byte} 工具类.
  *
  * @author GreyFable
  * @since 2025/2/18 16:15

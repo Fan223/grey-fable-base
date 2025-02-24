@@ -1,9 +1,7 @@
 package grey.fable.base.factory;
 
-import grey.fable.base.Assert;
-import grey.fable.base.exception.BaseException;
+import grey.fable.base.utils.ReflectUtils;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -24,21 +22,12 @@ public class SingletonFactory {
     /**
      * 获取单例对象.
      *
-     * @param clazz 类
+     * @param clazz {@link Class}
      * @return {@link T}
      * @author GreyFable
      * @since 2025/2/19 14:41
      */
     public static <T> T getInstance(Class<T> clazz) {
-        Assert.isNotNull(clazz, "Class must not be null.");
-        String key = clazz.getName();
-        return clazz.cast(POOL.computeIfAbsent(key, k -> {
-            try {
-                return clazz.getDeclaredConstructor().newInstance();
-            } catch (InvocationTargetException | InstantiationException | IllegalAccessException |
-                     NoSuchMethodException e) {
-                throw new BaseException(e);
-            }
-        }));
+        return clazz.cast(POOL.computeIfAbsent(clazz.getName(), key -> ReflectUtils.newInstance(clazz)));
     }
 }

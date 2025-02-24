@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 列表工具类.
+ * {@link List} 工具类.
  *
  * @author GreyFable
  * @since 2025/2/17 16:04
@@ -17,7 +17,7 @@ public class ListUtils {
     }
 
     /**
-     * 通过参数构建列表.
+     * 通过参数构建 {@link List}.
      *
      * @param items 列表元素
      * @return {@link List<T>}

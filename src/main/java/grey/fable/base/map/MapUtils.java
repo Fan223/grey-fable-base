@@ -17,7 +17,7 @@ public class MapUtils {
     }
 
     /**
-     * 判断 {@link Map} 是否为空.
+     * 判断是否为空.
      *
      * @param map {@link Map}
      * @return {@code boolean}
@@ -29,10 +29,10 @@ public class MapUtils {
     }
 
     /**
-     * 判断 {@link Map} 是否不为空.
+     * 判断是否不为空.
      *
      * @param map {@link Map}
-     * @return {@link boolean}
+     * @return {@code boolean}
      * @author GreyFable
      * @since 2025/2/19 9:54
      */

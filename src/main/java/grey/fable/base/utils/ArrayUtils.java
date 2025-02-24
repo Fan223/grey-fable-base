@@ -42,7 +42,7 @@ public class ArrayUtils {
      * 判断数组是否为空.
      *
      * @param obj 对象
-     * @return {@link boolean}
+     * @return {@code boolean}
      * @author GreyFable
      * @since 2025/2/18 17:14
      */
@@ -54,7 +54,7 @@ public class ArrayUtils {
      * 判断数组是否不为空.
      *
      * @param obj 对象
-     * @return {@link boolean}
+     * @return {@code boolean}
      * @author GreyFable
      * @since 2025/2/18 17:16
      */
