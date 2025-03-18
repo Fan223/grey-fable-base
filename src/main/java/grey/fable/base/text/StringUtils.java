@@ -61,6 +61,18 @@ public class StringUtils {
     }
 
     /**
+     * 拼接字符串.
+     *
+     * @param cs {@link CharSequence}
+     * @return {@link String}
+     * @author GreyFable
+     * @since 2025/3/6 15:45
+     */
+    public static String concat(CharSequence... cs) {
+        return join("", cs);
+    }
+
+    /**
      * 使用指定分隔符拼接成字符串.
      *
      * @param delimiter 分隔符
