@@ -1,6 +1,6 @@
 package grey.fable.base;
 
-import grey.fable.base.utils.IdUtils;
+import grey.fable.base.util.IdUtils;
 
 import java.util.concurrent.atomic.AtomicLong;
 

@@ -1,4 +1,4 @@
-package grey.fable.base.utils;
+package grey.fable.base.util;
 
 import grey.fable.base.Snowflake;
 import grey.fable.base.net.NetUtils;

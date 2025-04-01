@@ -1,6 +1,6 @@
 package grey.fable.base.factory;
 
-import grey.fable.base.utils.ReflectUtils;
+import grey.fable.base.util.ReflectUtils;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

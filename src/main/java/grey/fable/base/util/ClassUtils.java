@@ -1,4 +1,4 @@
-package grey.fable.base.utils;
+package grey.fable.base.util;
 
 /**
  * {@link Class} 工具类.

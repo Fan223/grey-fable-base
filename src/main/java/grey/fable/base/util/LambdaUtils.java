@@ -1,4 +1,4 @@
-package grey.fable.base.utils;
+package grey.fable.base.util;
 
 import grey.fable.base.function.BaseFunction;
 import grey.fable.base.text.StringUtils;
